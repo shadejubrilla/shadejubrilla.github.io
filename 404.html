@@ -1,12 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Page not found — Afolashade Joy Jubrilla</title>
-<link rel="stylesheet" href="style.css">
-<style>.notfound{min-height:60vh;display:grid;place-items:center;text-align:center;padding:40px}.notfound .box{background:#fff;padding:28px;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.06)}</style>
-</head>
-<body>
-<section class="notfound"><div class="box"><h1>404</h1><p>Sorry, that page doesn’t exist. Let’s get you back on track.</p><p><a class="btn" href="/">Go to homepage</a></p></div></section>
-<footer><p>© 2025 Afolashade Joy Jubrilla</p></footer>
-</body></html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Page not found — Afolashade Joy Jubrilla</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .notfound {
+        min-height: 60vh;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        padding: 40px;
+      }
+      .notfound .box {
+        background: #fff;
+        padding: 28px;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <script>
+      fetch("nav.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("navbar").innerHTML = html;
+          initMobileMenu();
+        });
+      
+      function initMobileMenu() {
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        if (hamburger && mobileMenu) {
+          hamburger.addEventListener('click', () => {
+            const isActive = hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.classList.toggle('menu-open', isActive);
+            document.documentElement.classList.toggle('menu-open', isActive);
+          });
+
+          const menuLinks = mobileMenu.querySelectorAll('a');
+          menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+              hamburger.classList.remove('active');
+              mobileMenu.classList.remove('active');
+              document.body.classList.remove('menu-open');
+              document.documentElement.classList.remove('menu-open');
+            });
+          });
+        }
+      }
+
+      function initScrollAnimations() {
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("animate");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        document.querySelectorAll("section").forEach((section) => {
+          observer.observe(section);
+        });
+
+        document.querySelectorAll(".section-head").forEach((head) => {
+          observer.observe(head);
+        });
+
+        document.querySelectorAll(".card").forEach((card, index) => {
+          observer.observe(card);
+        });
+
+        document.querySelectorAll(".metric").forEach((metric, index) => {
+          observer.observe(metric);
+        });
+      }
+
+      document.documentElement.classList.add("js-enabled");
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initScrollAnimations);
+      } else {
+        initScrollAnimations();
+      }
+    </script>
+    <section class="notfound">
+      <div class="box">
+        <h1>404</h1>
+        <p>Sorry, that page doesn’t exist. Let’s get you back on track.</p>
+        <p><a class="btn" href="/">Go to homepage</a></p>
+      </div>
+    </section>
+    <footer><p>© 2025 Afolashade Joy Jubrilla</p></footer>
+  </body>
+</html>

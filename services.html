@@ -1,24 +1,155 @@
-<!doctype html><html lang="en"><head>
-  <title>Services — Afolashade Joy Jubrilla</title>
-  <meta name="description" content="Fixed-scope offerings for KYC, AML and operational resilience with clear deliverables.">
-  <head></head>
-</head><body>
-<nav></nav>
-<header class="page-hero"><div class="container"><h1>Services</h1><p class="section-sub">Clear scope. Practical artifacts. Measurable outcomes.</p></div></header>
-<main class="container" style="padding:40px 0 72px">
-  <section><h2>Core offerings</h2>
-    <div class="cards">
-      <article class="card"><h3>KYC Health Check</h3><ul class="list"><li>Gap analysis</li><li>Quality gates</li><li>Prioritized fixes</li></ul></article>
-      <article class="card"><h3>Remediation Playbook</h3><ul class="list"><li>SOPs & checklists</li><li>Escalation rules</li><li>Training deck</li></ul></article>
-      <article class="card"><h3>Continuity Toolkit</h3><ul class="list"><li>Backup routing</li><li>Roles & comms</li><li>Test scenarios</li></ul></article>
-    </div>
-  </section>
-  <section><h2>How we work</h2>
-    <div class="cards">
-      <div class="card"><h3>Discovery</h3><p>Short interviews and sample documents.</p></div>
-      <div class="card"><h3>Design</h3><p>Controls, artifacts and training with alignment.</p></div>
-      <div class="card"><h3>Delivery</h3><p>Handover SOPs, templates and adoption plan.</p></div>
-    </div>
-  </section>
-  <div class="cta"><a href="contact.html" class="btn">Start a conversation</a></div>
-</main><footer></footer></body></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Services — Afolashade Joy Jubrilla</title>
+    <meta
+      name="description"
+      content="Fixed-scope offerings for KYC, AML and operational resilience with clear deliverables."
+    />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <script>
+      fetch("nav.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("navbar").innerHTML = html;
+          initMobileMenu();
+        });
+
+        fetch("footer.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("footer").innerHTML = html;
+        });
+      
+      function initMobileMenu() {
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        if (hamburger && mobileMenu) {
+          hamburger.addEventListener('click', () => {
+            const isActive = hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.classList.toggle('menu-open', isActive);
+            document.documentElement.classList.toggle('menu-open', isActive);
+          });
+
+          const menuLinks = mobileMenu.querySelectorAll('a');
+          menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+              hamburger.classList.remove('active');
+              mobileMenu.classList.remove('active');
+              document.body.classList.remove('menu-open');
+              document.documentElement.classList.remove('menu-open');
+            });
+          });
+        }
+      }
+
+      function initScrollAnimations() {
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("animate");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        document.querySelectorAll("section").forEach((section) => {
+          observer.observe(section);
+        });
+
+        document.querySelectorAll(".section-head").forEach((head) => {
+          observer.observe(head);
+        });
+
+        document.querySelectorAll(".card").forEach((card, index) => {
+          observer.observe(card);
+        });
+
+        document.querySelectorAll(".metric").forEach((metric, index) => {
+          observer.observe(metric);
+        });
+      }
+
+      document.documentElement.classList.add("js-enabled");
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initScrollAnimations);
+      } else {
+        initScrollAnimations();
+      }
+    </script>
+    <header class="page-hero">
+      <div class="container">
+        <h1>Services</h1>
+        <p class="section-sub">
+          Clear scope. Practical artifacts. Measurable outcomes.
+        </p>
+      </div>
+    </header>
+    <main class="container" style="padding: 32px 0 48px">
+      <section style="border-top: none; padding: 0 0 32px">
+        <h2>Core offerings</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>KYC Health Check</h3>
+            <ul class="list">
+              <li>Gap analysis</li>
+              <li>Quality gates</li>
+              <li>Prioritized fixes</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Remediation Playbook</h3>
+            <ul class="list">
+              <li>SOPs & checklists</li>
+              <li>Escalation rules</li>
+              <li>Training deck</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Continuity Toolkit</h3>
+            <ul class="list">
+              <li>Backup routing</li>
+              <li>Roles & comms</li>
+              <li>Test scenarios</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+      <section style="padding: 32px 0">
+        <h2>How we work</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>Discovery</h3>
+            <p>Short interviews and sample documents.</p>
+          </div>
+          <div class="card">
+            <h3>Design</h3>
+            <p>Controls, artifacts and training with alignment.</p>
+          </div>
+          <div class="card">
+            <h3>Delivery</h3>
+            <p>Handover SOPs, templates and adoption plan.</p>
+          </div>
+        </div>
+      </section>
+      <div class="cta">
+        <a href="contact.html" class="btn">Start a conversation</a>
+      </div>
+    </main>
+    <div id="footer"></div>
+  </body>
+</html>

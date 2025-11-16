@@ -1,13 +1,161 @@
-<!doctype html><html lang="en"><head>
-  <title>Enhancing Urban Development Through Slum Upgrading: Lessons from Makoko — Afolashade Joy Jubrilla</title>
-  <meta name="description" content="Community led design can expand access to education in flood prone settlements when paired with durable materials, maintenance plans and local ownership.">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Afolashade Joy Jubrilla", "jobTitle": "KYC / AML & Governance Professional", "address": {"@type": "PostalAddress", "addressLocality": "Rotterdam", "addressCountry": "NL"}}</script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Enhancing Urban Development Through Slum Upgrading: Lessons from Makoko", "author": {"@type": "Person", "name": "Afolashade Joy Jubrilla"}, "datePublished": "2025-11-16", "description": "Community led design can expand access to education in flood prone settlements when paired with durable materials, maintenance plans and local ownership."}</script>
-  <head></head></head><body>
-<nav></nav>
-<header class="page-hero"><div class="container"><h1>Enhancing Urban Development Through Slum Upgrading: Lessons from Makoko</h1><p class="section-sub" style="max-width:760px">Community led design can expand access to education in flood prone settlements when paired with durable materials, maintenance plans and local ownership.</p></div></header>
-<main class="container" style="padding:40px 0 72px">
-  <section><h2>Key ideas</h2><ul class="list"><li>Co design with residents improves adoption and protects dignity.</li><li>Frugal innovation must be matched with long term maintenance.</li><li>Education access is a foundation for mobility and opportunity.</li></ul>
-  <p style="margin-top:10px"><a class="btn-ghost" href="ENCHANCING LOCAL DEVELOPMENT THROUGH SLUM UPGRADES BY AFOLASHADE JOY JUBRILLA.pdf">Download the full PDF</a></p></section>
-  <section><h2>Why this matters</h2><p>People should be able to participate fully in society, free from prejudice, with real opportunities to learn and to choose their path. Better governance and design make that possible.</p></section>
-</main><footer></footer></body></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      Enhancing Urban Development Through Slum Upgrading: Lessons from Makoko —
+      Afolashade Joy Jubrilla
+    </title>
+    <meta
+      name="description"
+      content="Community led design can expand access to education in flood prone settlements when paired with durable materials, maintenance plans and local ownership."
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Afolashade Joy Jubrilla",
+        "jobTitle": "KYC / AML & Governance Professional",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Rotterdam",
+          "addressCountry": "NL"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Enhancing Urban Development Through Slum Upgrading: Lessons from Makoko",
+        "author": { "@type": "Person", "name": "Afolashade Joy Jubrilla" },
+        "datePublished": "2025-11-16",
+        "description": "Community led design can expand access to education in flood prone settlements when paired with durable materials, maintenance plans and local ownership."
+      }
+    </script>
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <script>
+      fetch("nav.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("navbar").innerHTML = html;
+          initMobileMenu();
+        });
+
+        fetch("footer.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("footer").innerHTML = html;
+        });
+      
+      function initMobileMenu() {
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        if (hamburger && mobileMenu) {
+          hamburger.addEventListener('click', () => {
+            const isActive = hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.classList.toggle('menu-open', isActive);
+            document.documentElement.classList.toggle('menu-open', isActive);
+          });
+
+          const menuLinks = mobileMenu.querySelectorAll('a');
+          menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+              hamburger.classList.remove('active');
+              mobileMenu.classList.remove('active');
+              document.body.classList.remove('menu-open');
+              document.documentElement.classList.remove('menu-open');
+            });
+          });
+        }
+      }
+
+      function initScrollAnimations() {
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("animate");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        document.querySelectorAll("section").forEach((section) => {
+          observer.observe(section);
+        });
+
+        document.querySelectorAll(".section-head").forEach((head) => {
+          observer.observe(head);
+        });
+
+        document.querySelectorAll(".card").forEach((card, index) => {
+          observer.observe(card);
+        });
+
+        document.querySelectorAll(".metric").forEach((metric, index) => {
+          observer.observe(metric);
+        });
+      }
+
+      document.documentElement.classList.add("js-enabled");
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initScrollAnimations);
+      } else {
+        initScrollAnimations();
+      }
+    </script>
+    <header class="page-hero">
+      <div class="container">
+        <h1>
+          Enhancing Urban Development Through Slum Upgrading: Lessons from
+          Makoko
+        </h1>
+        <p class="section-sub" style="max-width: 760px">
+          Community led design can expand access to education in flood prone
+          settlements when paired with durable materials, maintenance plans and
+          local ownership.
+        </p>
+      </div>
+    </header>
+    <main class="container" style="padding: 40px 0 72px">
+      <section>
+        <h2>Key ideas</h2>
+        <ul class="list">
+          <li>
+            Co design with residents improves adoption and protects dignity.
+          </li>
+          <li>Frugal innovation must be matched with long term maintenance.</li>
+          <li>
+            Education access is a foundation for mobility and opportunity.
+          </li>
+        </ul>
+        <p style="margin-top: 10px">
+          <a
+            class="btn-ghost"
+            href="ENCHANCING LOCAL DEVELOPMENT THROUGH SLUM UPGRADES BY AFOLASHADE JOY JUBRILLA.pdf"
+            >Download the full PDF</a
+          >
+        </p>
+      </section>
+      <section>
+        <h2>Why this matters</h2>
+        <p>
+          People should be able to participate fully in society, free from
+          prejudice, with real opportunities to learn and to choose their path.
+          Better governance and design make that possible.
+        </p>
+      </section>
+    </main>
+    <div id="footer"></div>
+  </body>
+</html>

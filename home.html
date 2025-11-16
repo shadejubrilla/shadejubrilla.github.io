@@ -25,7 +25,7 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="landing-page">
+  <body>
     <div id="navbar"></div>
 
     <script>
@@ -34,6 +34,12 @@
         .then((html) => {
           document.getElementById("navbar").innerHTML = html;
           initMobileMenu();
+        });
+
+      fetch("footer.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("footer").innerHTML = html;
         });
 
       function initMobileMenu() {
@@ -108,20 +114,108 @@
       }
     </script>
 
-    <div class="landing-hero">
-      <div class="landing-brand">
-        <h1 class="landing-brand-name">Afolashade Joy Jubrilla</h1>
+    <header class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1>Human centered compliance. Measurable outcomes.</h1>
+          <p class="lead">
+            I design KYC and governance systems that reduce risk, remove rework
+            and protect people.
+          </p>
+          <div class="cta">
+            <a href="contact.html" class="btn">Work with me</a>
+            <a href="publications.html" class="btn-ghost">Read my work</a>
+          </div>
+          <ul class="trust">
+            <li>15k+ accounts remediated</li>
+            <li>30% fewer document errors</li>
+            <li>Continuity through crisis</li>
+          </ul>
+        </div>
+        <div class="hero-portrait">
+          <img src="images/hero.jpg" alt="Afolashade portrait" />
+        </div>
       </div>
-      <div class="landing-image">
-        <img src="images/portrait1.jpg" alt="Afolashade Joy Jubrilla" />
-        <div class="landing-overlay"></div>
+    </header>
+    <section id="impact">
+      <div class="container">
+        <div class="section-head">
+          <h2>Impact</h2>
+          <p class="section-sub">
+            Selected outcomes from banking and policy work.
+          </p>
+        </div>
+        <div class="metrics">
+          <div class="metric">
+            <span>15k+</span><small>Accounts remediated</small>
+          </div>
+          <div class="metric">
+            <span>30%</span><small>Fewer incomplete docs</small>
+          </div>
+          <div class="metric">
+            <span>100%</span><small>KYC continuity during outages</small>
+          </div>
+          <div class="metric">
+            <span>10+ yrs</span><small>Operations & risk</small>
+          </div>
+        </div>
       </div>
-      <div class="landing-content">
-        <blockquote class="landing-quote">
-          "You earn an eternal name not by your wealth but by your impact on people's lives"
-        </blockquote>
-        <a href="home.html" class="btn landing-btn">See More About Me</a>
+    </section>
+    <section id="cases">
+      <div class="container">
+        <div class="section-head"><h2>Case Studies</h2></div>
+        <div class="cards">
+          <article class="card">
+            <h3>KYC remediation at scale</h3>
+            <p>
+              Standardized checklists and quality gates for legacy accounts.
+              Outcome: higher throughput, lower rework.
+            </p>
+          </article>
+          <article class="card">
+            <h3>PEP detection and escalation</h3>
+            <p>
+              Identified a high risk profile and coordinated escalation and
+              documentation to prevent a breach.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Continuity under crisis</h3>
+            <p>
+              Disaster recovery playbook and SharePoint intake that reduced
+              incomplete submissions by 30%.
+            </p>
+          </article>
+        </div>
       </div>
-    </div>
+    </section>
+    <section id="ratings">
+      <div class="container">
+        <div class="section-head">
+          <h2>Reviews</h2>
+          <p class="section-sub">
+            Trusted and rated 5 stars by colleagues and partners.
+          </p>
+        </div>
+        <div class="cards">
+          <div class="card testimonial">
+            <h3>5.0 ★★★★★</h3>
+            <blockquote>
+              "Strategic, empathetic and detail focused. She translates
+              requirements into results."
+            </blockquote>
+          </div>
+          <div class="card testimonial">
+            <h3>5.0 ★★★★★</h3>
+            <blockquote>
+              "Delivered growth, relationships and measurable risk reduction."
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer"></div>
   </body>
 </html>
+
