@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>KYC remediation at scale | Case Study</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="images/favicon.ico" sizes="any" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="images/icon-192.png"
+      sizes="192x192"
+    />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <script>
+      fetch("nav.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("navbar").innerHTML = html;
+          initMobileMenu();
+        });
+
+        fetch("footer.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("footer").innerHTML = html;
+        });
+      
+      function initMobileMenu() {
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        if (hamburger && mobileMenu) {
+          hamburger.addEventListener('click', () => {
+            const isActive = hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.classList.toggle('menu-open', isActive);
+            document.documentElement.classList.toggle('menu-open', isActive);
+          });
+
+          const menuLinks = mobileMenu.querySelectorAll('a');
+          menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+              hamburger.classList.remove('active');
+              mobileMenu.classList.remove('active');
+              document.body.classList.remove('menu-open');
+              document.documentElement.classList.remove('menu-open');
+            });
+          });
+        }
+      }
+
+      function initScrollAnimations() {
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("animate");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        document.querySelectorAll("section").forEach((section) => {
+          observer.observe(section);
+        });
+
+        document.querySelectorAll(".section-head").forEach((head) => {
+          observer.observe(head);
+        });
+
+        document.querySelectorAll(".card").forEach((card, index) => {
+          observer.observe(card);
+        });
+
+        document.querySelectorAll(".metric").forEach((metric, index) => {
+          observer.observe(metric);
+        });
+      }
+
+      document.documentElement.classList.add("js-enabled");
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initScrollAnimations);
+      } else {
+        initScrollAnimations();
+      }
+    </script>
+    <header class="page-hero">
+        <div class="container">
+            <h1>KYC remediation at scale</h1>
+            <p class="section-sub">How a structured playbook helped close more than fifteen thousand legacy accounts with fewer errors and better evidence.</p>
+            <div class="metrics">
+            <div class="metric"><span>15k+</span><small>Accounts remediated</small></div>
+            <div class="metric"><span>30%</span><small>Fewer documentation errors</small></div>
+            <div class="metric"><span>40%</span><small>Faster throughput</small></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container case-body">
+        <section>
+            <h2>Context</h2>
+            <p>The institution faced a large backlog of legacy customer files. Analysts worked with different practices, evidence standards were not aligned, and the remediation timeline was at risk. Regulators expected clear progress, yet the teams lacked a shared method.</p>
+        </section>
+    
+        <section>
+            <h2>Approach</h2>
+            <ul class="list">
+            <li>Created one clear remediation checklist that guided every review.</li>
+            <li>Defined quality gates at key points so issues were found early, not at the end.</li>
+            <li>Introduced templates for notes and documentation so files were ready for audit.</li>
+            <li>Clarified escalation paths for complex or high risk profiles.</li>
+            <li>Supported analysts with quick guides and informal coaching.</li>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>Outcome</h2>
+            <p>Within a short period the team moved from inconsistent individual effort to a consistent framework. Work flowed more smoothly, audit questions reduced, and leadership had clearer sight of progress.</p>
+            <ul class="list">
+            <li>More than fifteen thousand accounts remediated with complete evidence.</li>
+            <li>Thirty percent fewer documentation errors across reviewed files.</li>
+            <li>Noticeable improvement in speed and confidence from the analysts.</li>
+            </ul>
+        </section>
+    
+        <div class="case-cta">
+            <a href="contact.html" class="btn">Discuss KYC improvements</a>
+            <a href="home.html" class="btn-ghost">Back to case studies</a>
+        </div>
+    </main>
+    
+    <div id="footer"></div>
+  </body>
+</html>
