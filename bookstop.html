@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Gallery — Afolashade Joy Jubrilla</title>
+    <title>Book Shop — Afolashade Joy Jubrilla</title>
     <meta
       name="description"
       content="Research and writing on inclusion, freedom and human centered development."
@@ -65,6 +65,47 @@
           });
         }
       }
+
+      // Scroll-triggered animations
+      function initScrollAnimations() {
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("animate");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        document.querySelectorAll("section").forEach((section) => {
+          observer.observe(section);
+        });
+
+        document.querySelectorAll(".section-head").forEach((head) => {
+          observer.observe(head);
+        });
+
+        document.querySelectorAll(".card").forEach((card, index) => {
+          observer.observe(card);
+        });
+
+        document.querySelectorAll(".metric").forEach((metric, index) => {
+          observer.observe(metric);
+        });
+      }
+
+      document.documentElement.classList.add("js-enabled");
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initScrollAnimations);
+      } else {
+        initScrollAnimations();
+      }
     </script>
 
     <!-- Page hero -->
@@ -72,67 +113,15 @@
       <section class="page-hero" aria-hidden="false">
         <div class="container">
           <div class="section-head">
-            <h1>Photo Gallery</h1>
-            <p class="section-sub">Moments, portraits and behind-the-scenes.</p>
+            <h1>Book Shop</h1>
+            <p class="section-sub"></p>
           </div>
         </div>
       </section>
 
-      <!-- Gallery -->
       <section id="gallery" class="gallery-section">
         <div class="gallery-grid">
-          <figure><img src="images/hero.jpg" alt="Afolashade in green dress" loading="lazy"></figure>
-          <figure><img src="images/about.jpg" alt="Afolashade in black blazer" loading="lazy"></figure>
-          <figure><img src="images/office.jpg" alt="Afolashade working at laptop" loading="lazy"></figure>
-          <figure><img src="images/candid.jpg" alt="Candid moment" loading="lazy"></figure>
-          <figure><img src="images/portrait2.jpg" alt="Professional portrait smiling" loading="lazy"></figure>
-          <figure><img src="images/img47.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img46.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img45.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img44.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img42.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img43.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img41.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img39.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img38.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img37.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img40.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img36.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img34.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img35.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img31.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img33.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img32.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img29.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img30.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img28.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img27.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img26.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img21.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img25.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img23.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img24.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img22.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img20.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img11.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img12.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img19.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img13.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img17.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img18.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img10.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img5.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img7.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img9.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img6.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img16.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img8.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img15.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img2.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img1.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img14.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img4.jpg" alt="" loading="lazy"></figure>
-          <figure><img src="images/img3.jpg" alt="" loading="lazy"></figure>
+          <figure><a href="https://a.co/d/iI02s3C" target="_blank"><img src="images/ai.jpg" alt="Surviving The AI Recession"></a></figure>
         </div>
       </section>
 
