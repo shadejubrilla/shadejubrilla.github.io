@@ -1469,12 +1469,53 @@ nav {
   padding: 48px 0;
   border-top: 1px solid var(--line);
 }
+
 .gallery-grid {
   display: grid;
-  gap: 12px;
-  grid-template-columns: repeat(3, 1fr);
-  align-items: stretch;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  align-items: start;
 }
+
+.gallery-grid figure {
+  margin: 0;
+}
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.gallery-caption {
+  margin: 0;
+  padding: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.45;
+}
+
+.gallery-caption .btn {
+  width: fit-content;
+  margin-top: 0.75rem;
+  padding: 0.5rem 0.9rem;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+@media (min-width: 800px) {
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .gallery-caption {
+    padding: 0 0 0 0;
+  }
+}
+
 @media (max-width: 1000px) {
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1922,7 +1963,6 @@ html.no-scroll {
   color: var(--muted);
   font-size: 0.96rem;
 }
-
 
 /* Case page */
 .case-body {
