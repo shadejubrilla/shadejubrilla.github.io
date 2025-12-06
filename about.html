@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en"><head>
-  <title>About — Afolashade Joy Jubrilla</title>
-  <meta name="description" content="About Afolashade — Governance and compliance professional focused on people, evidence and outcomes.">
-  
+<title>About — Afolashade Joy Jubrilla</title>
+<meta name="description" content="About Afolashade — Risk, compliance, and governance professional focused on people, evidence and outcomes.">
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="images/favicon.ico" sizes="any">
@@ -13,224 +13,187 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Person",
+"name": "Afolashade Joy Jubrilla",
+"alternateName": "Afolashade Jubrilla",
+"url": "https://afolashade.com",
+"image": "https://afolashade.com/images/about.jpg",
+"jobTitle": "Risk, Compliance and Governance Professional",
+"worksFor": {
+"@type": "Organization",
+"name": "Independent Governance & Compliance Consultant"
+},
+"alumniOf": [
+{
+"@type": "CollegeOrUniversity",
+"name": "Erasmus University Rotterdam (International Institute of Social Studies)"
+}
+],
+"sameAs": [
+"https://www.afolashade.com",
+"https://www.amazon.com/Surviving-AI-Recession-Resilient-Automated-ebook/dp/B0G4DZVJ6S"
+],
+"knowsAbout": [
+"Governance",
+"Policy Development",
+"Risk Management",
+"Anti-Money Laundering (AML)",
+"Compliance",
+"Financial Crime Prevention",
+"Digital Transformation",
+"Operational Risk",
+"KYC / CDD",
+"Leadership"
+],
+"publishingPrinciples": "https://afolashade.com",
+"hasWritten": {
+"@type": "Book",
+"name": "Surviving the AI Recession: How to Stay Relevant, Resilient, and Ready in an Automated World",
+"isbn": "9798276217192",
+"asin": "B0G4DZVJ6S",
+"url": "https://www.amazon.com/dp/B0G4DZVJ6S"
+}
+}
+</script>
+
 </head><body>
 
 <div id="navbar"></div>
 
-    <script>
-      fetch("nav.html")
-        .then((res) => res.text())
-        .then((html) => {
-          document.getElementById("navbar").innerHTML = html;
-          initMobileMenu();
-        });
-      
-        fetch("footer.html")
-        .then((res) => res.text())
-        .then((html) => {
-          document.getElementById("footer").innerHTML = html;
-        });
+<script>
+fetch("nav.html")
+.then((res) => res.text())
+.then((html) => {
+document.getElementById("navbar").innerHTML = html;
+initMobileMenu();
+});
 
-      function initMobileMenu() {
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobileMenu');
-        
-        if (hamburger && mobileMenu) {
-          hamburger.addEventListener('click', () => {
-            const isActive = hamburger.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-            document.body.classList.toggle('menu-open', isActive);
-            document.documentElement.classList.toggle('menu-open', isActive);
-          });
+fetch("footer.html")
+.then((res) => res.text())
+.then((html) => {
+document.getElementById("footer").innerHTML = html;
+});
 
-          const menuLinks = mobileMenu.querySelectorAll('a');
-          menuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-              hamburger.classList.remove('active');
-              mobileMenu.classList.remove('active');
-              document.body.classList.remove('menu-open');
-              document.documentElement.classList.remove('menu-open');
-            });
-          });
-        }
-      }
+function initMobileMenu() {
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
 
-      // Scroll-triggered animations
-      function initScrollAnimations() {
-        const observerOptions = {
-          threshold: 0.1,
-          rootMargin: "0px 0px -50px 0px"
-        };
+if (hamburger && mobileMenu) {
+hamburger.addEventListener('click', () => {
+const isActive = hamburger.classList.toggle('active');
+mobileMenu.classList.toggle('active');
+document.body.classList.toggle('menu-open', isActive);
+document.documentElement.classList.toggle('menu-open', isActive);
+});
 
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("animate");
-              observer.unobserve(entry.target);
-            }
-          });
-        }, observerOptions);
+const menuLinks = mobileMenu.querySelectorAll('a');
+menuLinks.forEach(link => {
+link.addEventListener('click', () => {
+hamburger.classList.remove('active');
+mobileMenu.classList.remove('active');
+document.body.classList.remove('menu-open');
+document.documentElement.classList.remove('menu-open');
+});
+});
+}
+}
 
-        // Observe sections
-        document.querySelectorAll("section").forEach((section) => {
-          observer.observe(section);
-        });
+function initScrollAnimations() {
+const observerOptions = {
+threshold: 0.1,
+rootMargin: "0px 0px -50px 0px"
+};
 
-        // Observe section heads
-        document.querySelectorAll(".section-head").forEach((head) => {
-          observer.observe(head);
-        });
+const observer = new IntersectionObserver((entries) => {
+entries.forEach((entry) => {
+if (entry.isIntersecting) {
+entry.target.classList.add("animate");
+observer.unobserve(entry.target);
+}
+});
+}, observerOptions);
 
-        // Observe cards with staggered delay
-        document.querySelectorAll(".card").forEach((card, index) => {
-          observer.observe(card);
-        });
+document.querySelectorAll("section").forEach((section) => {
+observer.observe(section);
+});
 
-        // Observe metrics with staggered delay
-        document.querySelectorAll(".metric").forEach((metric, index) => {
-          observer.observe(metric);
-        });
-      }
+document.querySelectorAll(".section-head").forEach((head) => {
+observer.observe(head);
+});
 
-      // Add js-enabled class for progressive enhancement
-      document.documentElement.classList.add("js-enabled");
+document.querySelectorAll(".card").forEach((card) => {
+observer.observe(card);
+});
 
-      // Initialize animations when DOM is ready
-      if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", initScrollAnimations);
-      } else {
-        initScrollAnimations();
-      }
-    </script>
+document.querySelectorAll(".metric").forEach((metric) => {
+observer.observe(metric);
+});
+}
 
-<header class="page-hero"><div class="container"><h1>About me</h1>
-  </div></header>
+document.documentElement.classList.add("js-enabled");
+if (document.readyState === "loading") {
+document.addEventListener("DOMContentLoaded", initScrollAnimations);
+} else {
+initScrollAnimations();
+}
+</script>
+
+<header class="page-hero"><div class="container"><h1>About Me</h1>
+</div></header>
+
 <main class="container" style="padding:40px 0 72px">
-  <section class="intro grid2">
-    <div class="quote-section">
-      <h4 class="quote-name">Afolashade Joy Jubrilla</h4>
-      <h2>Risk, Compliance and Governance Professional</h2>
-      <p class="quote">
-        <span class="quote-mark">“</span>
-          Whatever your mind conceives and you diligently pursue, you will achieve.
-        <span class="quote-mark">”</span>
-      </p>
-    </div>
-    <figure><img src="images/about.jpg" alt=""></figure>
-  </section>
+<section class="intro grid2">
+<div class="quote-section">
+<h3 class="quote-name">Afolashade Joy Jubrilla</h3>
+<h2>Author | Governance & Development Strategist | Human-Centered Leadership Advocate</h2>
+<p class="quote">
+<span class="quote-mark">“</span>
+<h4>  Technology may shape the future, but it’s people who give it meaning.”
+Equipping professionals and organisations to thrive through relevance, resilience, and reinvention in an age of disruption.
+</h4>
+<span class="quote-mark">”</span>
+</p>
+</div>
+<figure><img src="images/about.jpg" alt="Afolashade portrait"></figure>
+</section>
 
-  <section class="who_am_i">
-    <h2>Who I am</h2>
-    <p>I am Afolashade Joy Jubrilla, a risk, compliance, and governance professional dedicated to building systems that protect people, strengthen institutions, and create fair opportunities for communities. My work sits at the intersection of financial crime prevention, operational excellence, and human centered policy.</p>
-    <br>
-    <p>I began my career in banking, where I supported customers, resolved complex claims, and worked directly with frontline teams. Over time, my work expanded into KYC and customer due diligence, fraud prevention, AML and CFT investigation, operational risk, and documentation quality. Across these roles, one truth became clear to me. Good systems are built on understanding people. When people are supported, trained, and trusted, compliance becomes culture, not a checklist.</p>
-    <br>
-    <p>I have spent almost a decade working across the heart of financial crime prevention. I have handled account takeovers, social engineering cases, elder financial exploitation, deposit and check fraud, payment abuse, sanctions alerts, politically exposed person reviews, and high risk customer escalations. I have also worked across major remediation projects, designed documentation quality controls, and created operational tools that reduced rework, increased clarity, and supported stronger governance.</p>
-    <br>
-    <p>My desire to understand people and systems more deeply led me to pursue a Master of Arts in Governance and Policy Development at the International Institute of Social Studies of Erasmus University. My research focused on inclusion, representation, and access. I studied how communities make decisions, how power shapes opportunities, and how governance can either include or exclude. My study on the Awori community explored political participation and fairness in selection processes. My fieldwork in Makoko examined education access, dignity, and community led development.</p>
-    <br>
-    <p>Beyond work, I mentor young professionals, support vulnerable communities, and speak about education, opportunity, and human dignity. I believe that awareness and empathy are powerful tools for change. I believe in environments where people are free to think, grow, and express themselves without fear. I believe strong systems do not suppress people. They empower them.</p>
-    <br>
-    <p>I show up with purpose and presence, ready to build, learn, and elevate the people and spaces I am trusted to serve. Because in the end, we rise when we help others rise.</p>
-    <br>
-    <h4>My approach is simple:</h4>
-    <ul>
-      <li>Build systems that scale.</li>
-      <li>Equip people so excellence feels natural.</li>
-      <li>Solve problems at their source rather than at the outcome.</li>
-      <li>Bridge leadership vision with analyst reality.</li>
-    </ul>
-    <br>
-    <p>I believe strong fraud and compliance programs grow from both directions. Leaders must listen, and analysts must be empowered. When both work together, prevention becomes culture rather than a task list.</p>
-    <br>
-    <p>Above all, I show up ready to learn, build, and elevate every environment I step into.</p>
-    <br>
-    <p>As Robert Ingersoll wisely said, “We rise by lifting others.” This reflects my values, my leadership philosophy, and the way I choose to contribute to safer and more inclusive financial ecosystems.</p>
-    <br>
-    <p>I welcome opportunities to connect with professionals who believe that awareness, inclusion, and accountability are essential to building systems that protect people and strengthen the societies we live in.</p>
-  </section>
-  <section>
-    <h2>What I am known for</h2>
-    <div class="cards">
-      <div class="card"><p>Transforming manual and inconsistent workflows into structured, measurable frameworks.</p></div>
-      <div class="card"><p>Designing learning centered tools that elevate team capacity.</p></div>
-      <div class="card"><p>Identifying risk and fraud patterns early and shaping operational responses</p></div>
-      <div class="card"><p>Communicating with clarity, empathy and strategic purpose</p></div>
-      <div class="card"><p>Creating alignment across compliance, operations, risk, technology and leadership</p></div>
-    </div>
-  </section>
+<section class="who_am_i">
+<h2>About Afolashade</h2>
+<p>Afolashade Joy Jubrilla helps professionals and organisations build relevance in uncertain times.
+Known for transforming complex systems into human-centered strategies, she blends governance insight with practical leadership for the modern economy.
+Her work bridges technology and humanity — empowering people to stay adaptable, forward-thinking, and purpose-driven in an age that constantly redefines success.
+Through her writing, advisory work, and thought leadership, she continues to champion resilience, clarity, and the courage to evolve.
+ </p>
+<br>
 
-  <!-- Professional experiences -->
-  <section id="experience">
-    <h2>Professional Experiences</h2>
-    <div class="experience-container">
-      <div class="card">
-        <h3>Eurail B.V — Customer Service & Claims Specialist (Regulatory Compliance & Risk)</h3>
-        <ul>
-          <li>Managed <strong>Passenger Rights compensation (PRR/DCR)</strong> cases, verifying claims and supporting compliance with EU regulations.</li>
-          <li>Conducted detailed <strong>transaction and documentation reviews</strong> to detect inconsistencies or potential misuse, supporting fraud prevention.</li>
-          <li>Streamlined workflows to reduce response times by <strong>35%</strong> and achieved <strong>90%</strong> first-contact resolution, improving customer satisfaction.</li>
-          <li>Achieved <strong>90%</strong> first-contact resolution in live chat, decreasing escalations by <strong>25%</strong> and enhancing travelers satisfaction.</li>
-          <li>Coordinated with internal teams to improve reporting and compliance processes for compensation cases.</li>
-          <li>Conducted <strong>training webinars and self-service tutorials</strong>, reducing support ticket volume by <strong>20%</strong>.</li>
-        </ul>
-      </div>
+<h2>Full biography</h2>
+<p> Afolashade Joy Jubrilla is a strategist, author, and human development advocate redefining what it means to lead, adapt, and stay relevant in an era of automation and accelerated change.</p>
+<br>
+<p>With over a decade of multidisciplinary experience spanning banking, operations, risk, portfolio management, business development, and international trade, she brings a unique perspective on how systems, strategy, and people intersect to create sustainable progress.</p>
+<br>
+<p> Her insights bridge the gap between governance, innovation, and human adaptability, helping organisations and professionals simplify complexity, build clarity, and strengthen decision-making in volatile environments.</p>
+<br>
+<p> She is the author of Surviving the AI Recession: How to Stay Relevant, Resilient, and Ready in an Automated World — an Amazon Top 3 Bestseller in Business Leadership and Career Guides. The book has sparked international dialogue on the future of work, leadership resilience, and the power of human judgment in a machine-driven age.</p>
+<br>
+<p>Beyond her professional expertise, Afolashade is a passionate advocate for girls’ education, continuous learning, and body positivity. She believes every individual — regardless of background, orientation, or appearance — deserves the freedom to learn, grow, and live without judgment.</p>
+<br>
+<p>Her mission is to inspire professionals and organisations to adapt with purpose, lead with empathy, and build relevance in a world that refuses to stand still.</p>
 
-      <div class="card">
-        <h3>Netherlands African Business Council (NABC) — Project Officer</h3>
-        <ul>
-          <li>Conducted due diligence checks and market risk assessments for <strong>30+</strong> Dutch corporate clients entering African markets, ensuring regulatory and operational compliance.</li>
-          <li>Assisted in tender submissions, providing regulatory and risk assessments for <strong>€5M+</strong> in projects.</li>
-          <li>Coordinated documentation for <strong>EU-funded trade missions</strong> ensuring alignment with partner standards.</li>
-        </ul>
-      </div>
+</ul>
+</section>
 
-      <div class="card">
-        <h3>Polaris Bank — KYC Analyst</h3>
-        <ul>
-          <li>Led remediation for <strong>15,000+ accounts</strong> to meet updated regulatory standards.</li>
-          <li>Identified a <strong>high-risk PEP</strong> attempting to bypass controls; prevented breach.</li>
-          <li>Built a <strong>SharePoint documentation checklist</strong>, cutting incomplete submissions by <strong>30%</strong>.</li>
-          <li>Set up a <strong>Disaster Recovery</strong> pathway to ensure KYC continuity during outages.</li>
-          <li>Created <strong>FastTrack Station</strong> knowledge hub; enabled faster onboarding & fewer errors.</li>
-        </ul>
-      </div>
-      
-      <div class="card">
-        <h3>Skye Bank PLC — Credit Risk & Onboarding Analyst</h3>
-        <ul>
-          <li>Conducted <strong>credit risk assessments</strong> and <strong>client onboarding verification</strong> for retail and corporate customers.</li>
-          <li>Implemented pre-submission checklists, reducing missing documents by <strong>40%</strong> and improving first-pass approval rates.</li>
-          <li>Collaborated with fraud and risk teams to <strong>enhance early-warning systems</strong>, reducing suspected fraudulent applications by <strong>15%</strong>.</li>
-          <li>Audited loan files for regulatory and internal policy compliance, ensuring <strong>100%</strong> adherence.</li>
-          <li>Streamlined loan file preparation, clearing <strong>95%</strong> of pending files within SLA.</li>
-          <li>Supported automation of income verification, reducing turnaround time by <strong>20%</strong>.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Track record</h2>
-    <ul class="list">
-      <li>Led remediation for more than fifteen thousand accounts with standardized evidence.</li>
-      <li>Flagged a politically exposed person and coordinated escalation to prevent a breach.</li>
-      <li>Built a SharePoint intake that reduced incomplete documentation by thirty percent and removed bottlenecks between branches and central processing.</li>
-      <li>Created a disaster recovery pathway for uninterrupted KYC operations.</li>
-      <li>Mentored young professionals and set up a knowledge hub that improved onboarding quality.</li>
-    </ul>
-  </section>
-  <section>
-    <h2>Honors and recognitions</h2>
-    <div class="cards">
-      <div class="card"><h3>Best KYC Supervisor — 2022</h3><p>Polaris Bank recognition for quality, speed and risk control.</p></div>
-      <div class="card"><h3>Influence and Service Award</h3><p>Celebrated for mentorship and community impact.</p></div>
-    </div>
-  </section>
+<section>
+<h2>Honors and Recognitions</h2>
+<div class="cards">
+<div class="card"><h3>Best KYC Supervisor — 2022</h3><p>Awarded for excellence in quality, speed, and risk control.</p></div>
+<div class="card"><h3>Influence and Service Award</h3><p>Recognized for mentorship and measurable community impact.</p></div>
+</div>
+</section>
 </main>
 
 <div id="footer"></div>
-
-</footer>
 
 </body></html>
