@@ -1,0 +1,223 @@
+html lang="en">
+<head>
+<title>Media Mentions — Afolashade Joy Jubrilla</title>
+
+<meta name="description" content="Media appearances, interviews, articles, and features highlighting the work of Afolashade Joy Jubrilla — Risk, Compliance & Governance Professional and Author of 'Surviving the AI Recession'.">
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="images/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" href="images/icon-192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+<link rel="stylesheet" href="style.css" />
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+
+<!-- Navigation -->
+<div id="navbar"></div>
+
+<script>
+fetch("nav.html")
+.then((res) => res.text())
+.then((html) => {
+document.getElementById("navbar").innerHTML = html;
+initMobileMenu();
+});
+
+fetch("footer.html")
+.then((res) => res.text())
+.then((html) => {
+document.getElementById("footer").innerHTML = html;
+});
+
+function initMobileMenu() {
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobileMenu");
+
+if (hamburger && mobileMenu) {
+hamburger.addEventListener("click", () => {
+const isActive = hamburger.classList.toggle("active");
+mobileMenu.classList.toggle("active");
+document.body.classList.toggle("menu-open", isActive);
+document.documentElement.classList.toggle("menu-open", isActive);
+});
+
+const links = mobileMenu.querySelectorAll("a");
+links.forEach((link) => {
+link.addEventListener("click", () => {
+hamburger.classList.remove("active");
+mobileMenu.classList.remove("active");
+document.body.classList.remove("menu-open");
+document.documentElement.classList.remove("menu-open");
+});
+});
+}
+}
+</script>
+
+<!-- Header -->
+<header class="hero slim-hero">
+<div class="container hero-inner">
+<div class="hero-copy">
+<h1>Media Mentions & Press</h1>
+<p class="lead">
+Interviews, features, reviews, and articles highlighting my work in risk, compliance, governance, and the future of work.
+</p>
+</div>
+</div>
+</header>
+
+<!-- Featured Section -->
+<section id="featured-media">
+<div class="container">
+<div class="section-head">
+<h2>Featured</h2>
+<p class="section-sub">Key public features and highlights.</p>
+</div>
+
+<div class="cards">
+<article class="card media-card">
+<h3>Book Release: “Surviving the AI Recession”</h3>
+<p>
+Officially published on Amazon, the book provides a strategic roadmap for professionals navigating automation, AI-driven change, and the future of work.
+</p>
+<p class="case-meta">
+<a href="https://www.amazon.com/dp/B0G4DZVJ6S" target="_blank">View on Amazon →</a>
+</p>
+</article>
+
+<article class="card media-card">
+<h3>Speaking & Thought Leadership</h3>
+<p>
+Insights shared across various platforms on policy, human-centered leadership, risk culture, and operational resilience.
+</p>
+<p class="case-meta">More updates coming soon →</p>
+</article>
+</div>
+</div>
+</section>
+
+<!-- Press Mentions -->
+<section id="press">
+<div class="container">
+<div class="section-head">
+<h2>Press Mentions</h2>
+<p class="section-sub">
+Articles, interviews, expert quotes, and features from media outlets and organizations.
+</p>
+</div>
+
+<div class="cards">
+
+<article class="card media-card">
+<h3>Upcoming Media Feature</h3>
+<p>
+A curated list of upcoming articles, interviews, and media appearances.
+</p>
+<p class="case-meta">Coming soon</p>
+</article>
+
+<article class="card media-card">
+<h3>Podcast Interview (To Be Announced)</h3>
+<p>
+A conversation on compliance culture, human-centered process design, and the future of work with AI.
+</p>
+<p class="case-meta">Coming soon</p>
+</article>
+
+</div>
+</div>
+</section>
+
+<!-- Published Articles (NEW SECTION) -->
+<section id="published-articles">
+<div class="container">
+<div class="section-head">
+<h2>Published Articles</h2>
+<p class="section-sub">Verified press coverage and external media publications.</p>
+</div>
+
+<div class="cards">
+
+<!-- Guardian Article -->
+<article class="card media-card">
+<h3>Guardian Nigeria — Digital Disruption & Business Survival</h3>
+<p>
+Feature article exploring strategies for organizations navigating digital disruption, automation, and the evolving role of leadership.
+</p>
+<p class="case-meta">
+<a href="https://guardian.ng/appointments/author-explores-how-businesses-can-survive-digital-disruption"
+target="_blank">Read on Guardian Nigeria →</a>
+</p>
+</article>
+
+<!-- Latest Nigerian News -->
+<article class="card media-card">
+<h3>Latest Nigerian News — Business Survival in an AI Era</h3>
+<p>
+Syndicated publication of the Guardian feature, highlighting insights into resilience, governance, and digital transformation.
+</p>
+<p class="case-meta">
+<a href="https://www.latestnigeriannews.com/d/138670/author-explores-how-businesses-can-survive-digital-disruption.html"
+target="_blank">Read on Latest Nigerian News →</a>
+</p>
+</article>
+
+</div>
+</div>
+</section>
+
+<!-- Media Kit -->
+<section id="media-kit">
+<div class="container">
+<div class="section-head">
+<h2>Media Kit</h2>
+<p class="section-sub">Resources for journalists, editors, and event hosts.</p>
+</div>
+
+<div class="cards">
+<article class="card media-card">
+<h3>Downloadable Media Kit</h3>
+<p>
+Includes professional bio, headshot, book summary, interview topics, and media-ready materials.
+</p>
+<p class="case-meta">Available soon</p>
+</article>
+
+<article class="card media-card">
+<h3>Author Biography</h3>
+<p>
+A comprehensive overview: your background, achievements, and professional expertise.
+</p>
+<p class="case-meta"><a href="about.html">Read full bio →</a></p>
+</article>
+</div>
+</div>
+</section>
+
+<!-- Contact -->
+<section id="media-contact">
+<div class="container">
+<div class="section-head">
+<h2>Press & Interview Requests</h2>
+</div>
+
+<p class="lead" style="max-width: 720px; margin: auto; text-align: center;">
+For media requests, interviews, book reviews, panel invitations, or speaking engagements,
+please contact me directly.
+</p>
+<div style="text-align: center; margin-top: 20px;">
+<a href="contact.html" class="btn">Contact Me</a>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<div id="footer"></div>
+
+</body>
+</html>   
