@@ -1,214 +1,167 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Afolashade Joy Jubrilla — Risk, Compliance and Governance Professional</title>
-    <meta
-      name="description"
-      content="Human centered compliance — measurable outcomes across KYC/AML, operational resilience and inclusive development."
-    />
+<head>
+ <title>Afolashade Joy Jubrilla — Risk, Compliance, Governance & AI Preparedness</title>
+ <meta name="description" content="Author of 'Surviving the AI Recession'. Afolashade Joy Jubrilla helps organizations strengthen compliance, improve operational resilience, and prepare teams for an AI-driven future." />
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="images/favicon.ico" sizes="any" />
-    <link
-      rel="icon"
-      type="image/png"
-      href="images/icon-192.png"
-      sizes="192x192"
-    />
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="navbar"></div>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script>
-      fetch("nav.html")
-        .then((res) => res.text())
-        .then((html) => {
-          document.getElementById("navbar").innerHTML = html;
-          initMobileMenu();
-        });
+ <link rel="icon" href="images/favicon.ico">
+ <link rel="stylesheet" href="style.css">
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
 
-      fetch("footer.html")
-        .then((res) => res.text())
-        .then((html) => {
-          document.getElementById("footer").innerHTML = html;
-        });
+<body>
+ <div id="navbar"></div>
 
-      function initMobileMenu() {
-        const hamburger = document.getElementById("hamburger");
-        const mobileMenu = document.getElementById("mobileMenu");
+ <header class="hero">
+ <div class="container hero-inner">
 
-        if (hamburger && mobileMenu) {
-          hamburger.addEventListener("click", () => {
-            const isActive = hamburger.classList.toggle("active");
-            mobileMenu.classList.toggle("active");
-            document.body.classList.toggle("menu-open", isActive);
-            document.documentElement.classList.toggle("menu-open", isActive);
-          });
+ <div class="hero-copy">
+ <h2>
+ Afolashade Joy Jubrilla 
+ </h2>
 
-          const menuLinks = mobileMenu.querySelectorAll("a");
-          menuLinks.forEach((link) => {
-            link.addEventListener("click", () => {
-              hamburger.classList.remove("active");
-              mobileMenu.classList.remove("active");
-              document.body.classList.remove("menu-open");
-              document.documentElement.classList.remove("menu-open");
-            });
-          });
-        }
-      }
+ <p class="lead">
+   An Operations & Compliance Strategist and author of 
+ <strong>“Surviving the AI Recession.”</strong> Human-Centered Strategy for an AI-Driven Future.
+ I help teams strengthen governance, prevent fraud, and stay resilient as AI reshapes the workplace.
+ </p>
 
-      // Scroll-triggered animations
-      function initScrollAnimations() {
-        const observerOptions = {
-          threshold: 0.1,
-          rootMargin: "0px 0px -50px 0px",
-        };
+ <div class="cta">
+ <a href="contact.html" class="btn">Consult With Me</a>
+ <a href="publications.html" class="btn-ghost">Explore My Work</a>
+ </div>
 
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("animate");
-              observer.unobserve(entry.target);
-            }
-          });
-        }, observerOptions);
+ <ul class="trust">
+ <li>15,000+ Accounts Remediated</li>
+ <li>30% Reduction in Documentation Errors</li>
+ <li>Proven Continuity Through Crisis</li>
+ </ul>
+ </div>
 
-        // Observe sections
-        document.querySelectorAll("section").forEach((section) => {
-          observer.observe(section);
-        });
+ <div class="hero-portrait">
+ <img src="images/hero.jpg" alt="Portrait of Afolashade Joy Jubrilla">
+ </div>
+ </div>
+ </header>
 
-        // Observe section heads
-        document.querySelectorAll(".section-head").forEach((head) => {
-          observer.observe(head);
-        });
+ <!-- ===================== BOOK FEATURE ===================== -->
 
-        // Observe cards with staggered delay
-        document.querySelectorAll(".card").forEach((card, index) => {
-          observer.observe(card);
-        });
+ <section id="mybook">
+ <div class="container">
+ <div class="section-head">
+ <h2>New Book Release</h2>
+ <p class="section-sub">How to Stay Revelant, Resilient and Ready in an Automated world.</p>
+ </div>
 
-        // Observe metrics with staggered delay
-        document.querySelectorAll(".metric").forEach((metric, index) => {
-          observer.observe(metric);
-        });
-      }
+ 
 
-      // Add js-enabled class for progressive enhancement
-      document.documentElement.classList.add("js-enabled");
+ <div class="book-details">
+ <h3>Surviving the AI Recession</h3>
+ <p>
+ A strategic guide for professionals navigating automation, layoffs, and digital transformation. 
+ Learn how to stay relevant, build resilience, and thrive as AI reshapes global industries.
+ </p>
 
-      // Initialize animations when DOM is ready
-      if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", initScrollAnimations);
-      } else {
-        initScrollAnimations();
-      }
-    </script>
+ <ul class="book-highlights">
+ <li> Future-proof career strategies</li>
+ <li> Key AI skills to remain employable</li>
+ <li> Practical frameworks for adapting fast</li>
+ <li> Leadership insights for an automated world</li>
+ </ul>
 
-    <header class="hero">
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <h1>
-            Fraud Prevention. Compliance Strategy. Human-Centered Leadership.
-          </h1>
-          <p class="lead">
-            An Operations and Business Strategist and author of "Surviving the AI
-            Recession, she blends governance, process improvement, and human-centered
-            innovation to help teams thrive in times of change.
-          </p>
-          <div class="cta">
-            <a href="contact.html" class="btn">Work with me</a>
-            <a href="publications.html" class="btn-ghost">Read my work</a>
-          </div>
-          <ul class="trust">
-            <li>15k+ accounts remediated</li>
-            <li>30% fewer document errors</li>
-            <li>Continuity through crisis</li>
-          </ul>
-        </div>
-        <div class="hero-portrait">
-          <img src="images/hero.jpg" alt="Afolashade portrait" />
-        </div>
-      </div>
-    </header>
-    <section id="impact">
-      <div class="container">
-        <div class="section-head">
-          <h2>Impact</h2>
-          <p class="section-sub">
-            Selected outcomes from banking and policy work.
-          </p>
-        </div>
-        <div class="metrics">
-          <div class="metric">
-            <span>15k+</span><small>Accounts remediated</small>
-          </div>
-          <div class="metric">
-            <span>30%</span><small>Fewer incomplete docs</small>
-          </div>
-          <div class="metric">
-            <span>100%</span><small>KYC continuity during outages</small>
-          </div>
-          <div class="metric">
-            <span>10+ yrs</span><small>Operations & risk</small>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="cases">
-      <div class="container">
-        <div class="section-head"><h2>Case Studies</h2></div>
-        <div class="cards">
-          <!-- Case 1 -->
-          <a href="case_kyc_remediation.html" class="case-card-link">
-            <article class="card case-card">
-              <h3>KYC remediation at scale</h3>
-              <p>
-                Standardized checklists and quality gates for legacy accounts.
-                Result: higher throughput and less rework across more than
-                fifteen thousand customer files.
-              </p>
-              <p class="case-meta">Read the full story →</p>
-            </article>
-          </a>
+ <br>
+ <a href="https://www.amazon.com/dp/B0G4DZVJ6S" class="btn" target="_blank">
+ Get the Book on Amazon
+ </a>
+ </div>
+ </div>
+ </div>
+ </section>
 
-          <!-- Case 2 -->
-          <a href="case_pep_detection.html" class="case-card-link">
-            <article class="card case-card">
-              <h3>PEP detection and escalation</h3>
-              <p>
-                Identified a sensitive high risk profile and guided a complete
-                escalation that protected the institution from a serious
-                compliance incident.
-              </p>
-              <p class="case-meta">Read the full story →</p>
-            </article>
-          </a>
+ <!-- ===================== IMPACT ===================== -->
 
-          <!-- Case 3 -->
-          <a href="case_continuity.html" class="case-card-link">
-            <article class="card case-card">
-              <h3>Continuity under crisis</h3>
-              <p>
-                Introduced a temporary intake workflow and a disaster recovery
-                playbook that kept KYC work moving during system disruption.
-              </p>
-              <p class="case-meta">Read the full story →</p>
-            </article>
-          </a>
-        </div>
-      </div>
-    </section>
+ <section id="impact">
+ <div class="container">
+ <div class="section-head">
+ <h2>Impact</h2>
+ <p class="section-sub">
+ Measurable outcomes across banking, governance, and compliance.
+ </p>
+ </div>
 
-    <div id="footer"></div>
-  </body>
+ <div class="metrics">
+ <div class="metric"><span>15k+</span><small>Accounts Completed</small></div>
+ <div class="metric"><span>30%</span><small>Fewer Documentation Errors</small></div>
+ <div class="metric"><span>100%</span><small>KYC Continuity During Outages</small></div>
+ <div class="metric"><span>10+ yrs</span><small>Risk & Operations</small></div>
+ </div>
+ </div>
+ </section>
+
+ <!-- ===================== CASES ===================== -->
+
+ <section id="cases">
+ <div class="container">
+ <div class="section-head"><h2>Case Studies</h2></div>
+
+ <div class="cards">
+
+ <a href="case_kyc_remediation.html" class="case-card-link">
+ <article class="card case-card">
+ <h3>KYC Remediation at Scale</h3>
+ <p>
+ Standardized checklists and validation workflows that cleaned up
+ 15,000+ legacy accounts with higher accuracy and faster throughput.
+ </p>
+ <p class="case-meta">Read full case →</p>
+ </article>
+ </a>
+
+ <a href="case_pep_detection.html" class="case-card-link">
+ <article class="card case-card">
+ <h3>PEP Detection & Escalation</h3>
+ <p>
+ Identified a critical high-risk profile and led an escalation framework
+ that mitigated institutional exposure.
+ </p>
+ <p class="case-meta">Read full case →</p>
+ </article>
+ </a>
+
+ <a href="case_continuity.html" class="case-card-link">
+ <article class="card case-card">
+ <h3>Continuity Under Crisis</h3>
+ <p>
+ Designed a disaster-ready intake workflow that kept compliance running
+ during severe system downtime.
+ </p>
+ <p class="case-meta">Read full case →</p>
+ </article>
+ </a>
+
+ </div>
+ </div>
+ </section>
+
+ <div id="footer"></div>
+
+ <script>
+ fetch("nav.html")
+ .then(res => res.text())
+ .then(html => {
+ document.getElementById("navbar").innerHTML = html;
+ initMobileMenu();
+ });
+
+ fetch("footer.html")
+ .then(res => res.text())
+ .then(html => {
+ document.getElementById("footer").innerHTML = html;
+ });
+ </script>
+
+</body>
 </html>
